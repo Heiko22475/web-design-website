@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 
 const navLinks = [
   { name: 'Start', href: '#hero' },
+  { name: 'About', href: '#about' },
   { name: 'Leistungen', href: '#services' },
+  { name: 'Beispiele', href: '#projects' },
   { name: 'Preise', href: '#packages' },
-  { name: 'Portfolio', href: '#portfolio' },
   { name: 'Ablauf', href: '#process' },
   { name: 'Kontakt', href: '#contact' },
 ];
@@ -16,12 +17,13 @@ const Navbar: React.FC = () => {
   const closeMenu = () => setIsMobileMenuOpen(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200 shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/90 backdrop-blur-sm border-b border-slate-800 shadow-lg shadow-black/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex-shrink-0 flex items-center">
-            <a href="#hero" onClick={closeMenu} className="font-bold text-xl text-slate-900 tracking-tight">
-              WebDesign<span className="text-blue-600">Pro</span>
+          <div className="flex-shrink-0 flex items-center space-x-4">
+            <img src="/MeinAuftrittOnline.png" alt="Logo" className="w-20 h-20 object-contain rounded" />
+            <a href="#hero" onClick={closeMenu} className="font-bold text-xl text-slate-100 tracking-tight">
+              Mein Auftritt <span className="text-sky-400">Online</span>
             </a>
           </div>
 
@@ -31,14 +33,14 @@ const Navbar: React.FC = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-slate-600 hover:text-blue-600 font-medium transition-colors text-sm uppercase tracking-wide"
+                className="text-slate-300 hover:text-sky-400 font-medium transition-colors transition-transform duration-200 hover:scale-105 text-sm uppercase tracking-wide"
               >
                 {link.name}
               </a>
             ))}
             <a
               href="#contact"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full font-medium transition-colors shadow-sm hover:shadow-md text-sm"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full font-medium transition-colors transition-transform duration-200 hover:scale-105 shadow-sm hover:shadow-md text-sm glow-button"
             >
               Anfragen
             </a>
@@ -49,7 +51,7 @@ const Navbar: React.FC = () => {
             <button
               onClick={toggleMenu}
               type="button"
-              className="text-slate-500 hover:text-slate-900 focus:outline-none focus:text-slate-900 p-2"
+              className="text-slate-300 hover:text-white focus:outline-none focus:text-white p-2"
               aria-controls="mobile-menu"
               aria-expanded={isMobileMenuOpen}
               aria-label="Toggle navigation"
@@ -71,14 +73,14 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu Panel */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-slate-100 absolute w-full" id="mobile-menu">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-lg">
+        <div className="md:hidden bg-slate-950 border-t border-slate-800 absolute w-full" id="mobile-menu">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-lg shadow-black/40">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={closeMenu}
-                className="block px-3 py-4 rounded-md text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 text-center border-b border-slate-50 last:border-0"
+                className="block px-3 py-4 rounded-md text-base font-medium text-slate-200 hover:text-sky-400 hover:bg-slate-900/60 text-center border-b border-slate-900 last:border-0"
               >
                 {link.name}
               </a>
