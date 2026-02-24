@@ -5,10 +5,12 @@ import Accordion from '../components/Accordion';
 import { landingContent } from '../data/landingContent';
 
 const LandingPage: React.FC = () => {
+  const GA_MEASUREMENT_ID = 'G-PERKG76JWQ';
   const { services, packages, process, faq, portfolio } = landingContent;
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
   const [formError, setFormError] = useState<string | null>(null);
   const [legalModal, setLegalModal] = useState<'impressum' | 'datenschutz' | null>(null);
+  const [consentStatus, setConsentStatus] = useState<'unknown' | 'accepted' | 'declined'>('unknown');
   const projectHighlights = portfolio.slice(0, 3);
 
   const heroIntroText = 'IHR PARTNER FÜR PROFESSIONELLES WEBDESIGN';
@@ -34,6 +36,40 @@ const LandingPage: React.FC = () => {
   const [heroItemIndex, setHeroItemIndex] = useState(0);
   const [heroHoldBeforeReceive, setHeroHoldBeforeReceive] = useState(false);
   const [heroHoldBeforeIntro, setHeroHoldBeforeIntro] = useState(false);
+
+  const loadGtag = () => {
+    if (document.getElementById('ga-gtag')) {
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.id = 'ga-gtag';
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    document.head.appendChild(script);
+
+    const win = window as any;
+    win.dataLayer = win.dataLayer || [];
+    function gtag(...args: unknown[]) { win.dataLayer.push(args); }
+    win.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', GA_MEASUREMENT_ID);
+  };
+
+  useEffect(() => {
+    const stored = window.localStorage.getItem('cookieConsent');
+    if (stored === 'accepted' || stored === 'declined') {
+      setConsentStatus(stored);
+      if (stored === 'accepted') {
+        loadGtag();
+      } else {
+        (window as any)[`ga-disable-${GA_MEASUREMENT_ID}`] = true;
+      }
+      return;
+    }
+
+    (window as any)[`ga-disable-${GA_MEASUREMENT_ID}`] = true;
+  }, []);
 
   useEffect(() => {
     if (!heroHoldBeforeReceive) {
@@ -799,15 +835,24 @@ const LandingPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-lg mb-2">7. Cookies</h3>
+                    <h3 className="font-bold text-lg mb-2">7. Google Analytics</h3>
                     <p className="text-sm">
-                      Diese Website setzt nach aktuellem Stand keine Cookies zu Marketing- oder Analysezwecken ein.
-                      Technisch notwendige Cookies können je nach Hosting/Framework entstehen (z.B. für Sicherheitsfunktionen). In diesem Fall erfolgt die Verarbeitung auf Grundlage von § 25 Abs. 2 TDDDG und Art. 6 Abs. 1 lit. f DSGVO.
+                      Wir nutzen Google Analytics, um die Nutzung unserer Website auszuwerten und Inhalte zu verbessern.
+                      Die Verarbeitung erfolgt nur nach Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO i.V.m. § 25 Abs. 1 TDDDG).
+                      Anbieter: Google Ireland Limited. Eine Uebermittlung in Drittländer (z.B. USA) kann nicht ausgeschlossen werden.
+                      Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie den Browser-Speicher löschen; beim nächsten Besuch erscheint das Banner erneut.
                     </p>
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-lg mb-2">8. Ihre Rechte</h3>
+                    <h3 className="font-bold text-lg mb-2">8. Cookies</h3>
+                    <p className="text-sm">
+                      Wir setzen technisch notwendige Cookies ein. Analyse-Cookies werden nur nach Ihrer Einwilligung gesetzt.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="font-bold text-lg mb-2">9. Ihre Rechte</h3>
                     <p className="text-sm">
                       Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie Widerspruch gegen die Verarbeitung Ihrer personenbezogenen Daten.
                       Zudem haben Sie das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.
@@ -815,7 +860,7 @@ const LandingPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-lg mb-2">9. Stand</h3>
+                    <h3 className="font-bold text-lg mb-2">10. Stand</h3>
                     <p className="text-sm">{legalInfo.lastUpdated}</p>
                   </div>
                 </div>
@@ -824,6 +869,47 @@ const LandingPage: React.FC = () => {
           </div>
         </div>
       )}
+
+      {consentStatus === 'unknown' ? (
+        <div className="fixed inset-x-0 bottom-0 z-50 px-4 pb-4">
+          <div className="mx-auto max-w-3xl rounded-2xl border border-slate-800 bg-slate-950/95 p-4 sm:p-6 shadow-2xl backdrop-blur">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <p className="text-sm text-slate-200">
+                Wir nutzen Cookies, um die Website zu verbessern und Google Analytics zu verwenden. Sie können zustimmen oder ablehnen.
+              </p>
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+                <button
+                  onClick={() => {
+                    window.localStorage.setItem('cookieConsent', 'declined');
+                    setConsentStatus('declined');
+                    (window as any)[`ga-disable-${GA_MEASUREMENT_ID}`] = true;
+                  }}
+                  className="px-4 py-2 text-sm font-semibold text-slate-200 border border-slate-700 rounded-md hover:bg-slate-900 transition-colors"
+                >
+                  Ablehnen
+                </button>
+                <button
+                  onClick={() => {
+                    window.localStorage.setItem('cookieConsent', 'accepted');
+                    setConsentStatus('accepted');
+                    (window as any)[`ga-disable-${GA_MEASUREMENT_ID}`] = false;
+                    loadGtag();
+                  }}
+                  className="px-4 py-2 text-sm font-semibold text-slate-950 bg-emerald-400 rounded-md hover:bg-emerald-300 transition-colors"
+                >
+                  Akzeptieren
+                </button>
+                <button
+                  onClick={() => setLegalModal('datenschutz')}
+                  className="px-4 py-2 text-sm font-semibold text-sky-300 border border-sky-400/60 rounded-md hover:bg-slate-900 transition-colors"
+                >
+                  Mehr erfahren
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 };
