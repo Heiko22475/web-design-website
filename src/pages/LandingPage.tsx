@@ -233,7 +233,7 @@ const LandingPage: React.FC = () => {
                         ? heroReceiveTitle.slice(0, heroCharIndex)
                         : heroReceiveTitle}
                   </span>
-                  <span className={`block w-full break-words h-[5.75rem] sm:h-[7.5rem] md:h-[9.5rem] lg:h-[7.5rem] xl:h-[9.5rem] ${heroPhase === 'receive' ? 'hero-outline-text' : ''}`}>
+                  <span className="block w-full break-words h-[5.75rem] sm:h-[7.5rem] md:h-[9.5rem] lg:h-[7.5rem] xl:h-[9.5rem]">
                     {heroPhase === 'intro'
                       ? (heroCharIndex > 'IHR PARTNER FÜR'.length + 1
                         ? heroIntroText.slice('IHR PARTNER FÜR'.length + 1, heroCharIndex)
