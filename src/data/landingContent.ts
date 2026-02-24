@@ -74,7 +74,7 @@ export const landingContent = {
       id: "business",
       name: "Business",
       price: "Bald verfügbar",
-      features: ["Alles von Starter", "Individuelles Design", "Google Maps Integration", "Mehrseitige Website", "Erweiterte Inhaltsverwaltung (CMS)", "Verbesserte Sichtbarkeit", "Content Banner (Cookies)", "Social Media Integration"],
+      features: ["Alles von Starter", "Individuelles Design", "Google Maps Integration", "Mehrseitige Website", "Erweiterte Inhaltsverwaltung (CMS)", "Verbesserte Sichtbarkeit", "Consent Banner (Cookies)", "Social Media Integration"],
       isPopular: true
     },
     {
