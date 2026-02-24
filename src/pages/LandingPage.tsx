@@ -895,7 +895,7 @@ const LandingPage: React.FC = () => {
                     (window as any)[`ga-disable-${GA_MEASUREMENT_ID}`] = false;
                     loadGtag();
                   }}
-                  className="px-4 py-2 text-sm font-semibold text-slate-950 bg-emerald-400 rounded-md hover:bg-emerald-300 transition-colors"
+                  className="px-4 py-2 text-sm font-semibold text-white bg-blue-600 rounded-md hover:bg-blue-500 transition-colors"
                 >
                   Akzeptieren
                 </button>
