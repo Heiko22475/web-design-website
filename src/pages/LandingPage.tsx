@@ -324,7 +324,7 @@ const LandingPage: React.FC = () => {
                 ))}
               </div>
             </div>
-<div className="grid grid-cols-2 gap-3 sm:gap-6 stagger-reveal"> {[ { value: '7–10 Tage', label: 'Typische Projektlaufzeit' }, { value: '100%', label: 'Mobil optimiert' }, { value: 'Kontakt', label: 'Direkter Ansprechpartner per E-Mail' }, { value: 'Zuverlässig', label: 'Klarer Prozess & Abstimmung' } ].map((stat) => ( <div key={stat.value} className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 sm:p-6 text-center shadow-sm glow-card transition-transform duration-300 hover:scale-[1.04] will-change-transform">
+<div className="grid grid-cols-2 gap-3 sm:gap-6 stagger-reveal"> {[ { value: '7–14 Tage', label: 'Typische Projektlaufzeit' }, { value: '100%', label: 'Mobil optimiert' }, { value: 'Kontakt', label: 'Direkter Ansprechpartner per E-Mail' }, { value: 'Zuverlässig', label: 'Klarer Prozess & Abstimmung' } ].map((stat) => ( <div key={stat.value} className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 sm:p-6 text-center shadow-sm glow-card transition-transform duration-300 hover:scale-[1.04] will-change-transform">
                   <div className="text-2xl font-bold text-slate-100">{stat.value}</div>
                   <div className="mt-2 text-sm text-slate-300">{stat.label}</div>
                 </div>

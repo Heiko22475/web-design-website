@@ -186,7 +186,7 @@ export const landingContent = {
   faq: [
     {
       question: "Wie lange dauert die Erstellung einer Website?",
-      answer: "Je nach Umfang des Projekts dauert die Erstellung in der Regel zwischen 7 und 10 Werktage. Für einfache One-Pager geht es oft schneller, umfangreiche Business-Seiten benötigen etwas mehr Zeit für Konzeption und Abstimmung."
+      answer: "Je nach Umfang des Projekts dauert die Erstellung in der Regel zwischen 7 und 14 Werktage."
     },
     {
       question: "Kann ich Inhalte später selbst ändern?",
@@ -194,7 +194,7 @@ export const landingContent = {
     },
     {
       question: "Ist die Website für Handys optimiert?",
-      answer: "Absolut. Wir verfolgen einen 'Mobile-First'-Ansatz. Ihre Website sieht auf Smartphones, Tablets und Desktop-Computern gleichermaßen gut aus und ist perfekt bedienbar."
+      answer: "Absolut. Ihre Website sieht auf Smartphones, Tablets und Desktop-Computern gleichermaßen gut aus und ist perfekt bedienbar."
     },
     {
       question: "Bieten Sie auch Domains an?",
@@ -206,7 +206,7 @@ export const landingContent = {
     },
     {
       question: "Muss ich dafür etwas einrichten oder Accounts erstellen?",
-      answer: "Ja – für das Hosting und die Datenbank brauchen Sie eigene Accounts bei Vercel und Supabase. Zusätzlich benötigen Sie einen GitHub-Account: Dort liegt das Website-Projekt (Repository), und Vercel kann daraus automatisch deployen und Updates übernehmen. Wir schicken Ihnen dafür per E-Mail ein kurzes Schritt-für-Schritt-Tutorial, damit alles einfach bleibt. Die Accounts werden von Ihnen erstellt, damit Sie die volle Kontrolle behalten. Wenn Fragen auftauchen, unterstützen wir Sie selbstverständlich."
+      answer: "Ja – Sie brauchen einen Account bei z.B. IONOS, um die Domain zu kaufen. Accounts bei Supabase, Vercel, Resend und GitHub erstellen wir für Sie und geben Ihnen die Zugangsdaten, damit Sie alles im Blick haben."
     }
   ] as FAQItem[]
 };
