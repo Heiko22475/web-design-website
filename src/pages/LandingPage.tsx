@@ -267,24 +267,28 @@ const LandingPage: React.FC = () => {
                 </div>
               </div>
               <div className="min-w-0 w-full mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center page-load">
-                <a
-                  href="#contact"
-                  className="relative mx-auto w-full rounded-lg shadow-lg lg:max-w-md overflow-hidden glow-panel transition-transform duration-300 hover:scale-[1.03] will-change-transform focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 page-load-item"
-                >
-                  <div className="relative block w-full bg-slate-900/60 rounded-lg overflow-hidden">
-                     <img
-                        className="w-full h-full object-cover"
-                        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
-                        alt="Team arbeitet am Projekt"
-                        loading="eager"
-                        decoding="async"
-                      />
-                     <div className="absolute bottom-0 bg-slate-950/80 backdrop-blur p-6 w-full border-t border-slate-800">
-                        <p className="font-bold text-slate-100 text-lg">Starten Sie Ihr Projekt</p>
-                        <p className="text-slate-300 text-sm mt-1">Lassen Sie uns gemeinsam Ihre digitale Vision verwirklichen.</p>
-                     </div>
-                  </div>
-                </a>
+                <div className="relative mx-auto w-full rounded-2xl border border-slate-800 bg-slate-900/70 p-6 sm:p-8 shadow-lg glow-panel transition-transform duration-300 hover:scale-[1.03] will-change-transform page-load-item">
+                  <p className="text-sm uppercase tracking-wider text-slate-400">Vertrauen</p>
+                  <h3 className="mt-2 text-2xl font-bold text-white">Warum Kunden uns wählen</h3>
+                  <ul className="mt-6 space-y-4">
+                    {[
+                      'DSGVO-konforme Umsetzung',
+                      'Responsives Design auf allen Geräten',
+                      'Schnelle Ladezeiten & Performance',
+                      'Klarer Prozess & transparente Updates',
+                      'Zuverlässig'
+                    ].map((item) => (
+                      <li key={item} className="flex items-start gap-3 text-white">
+                        <span className="mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/20 text-blue-300">
+                          <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </span>
+                        <span className="text-sm sm:text-base">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
