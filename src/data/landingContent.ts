@@ -206,7 +206,7 @@ export const landingContent = {
     },
     {
       question: "Muss ich dafür etwas einrichten oder Accounts erstellen?",
-      answer: "Ja – Sie brauchen einen Account bei z.B. IONOS, um die Domain zu kaufen. Accounts bei Supabase, Vercel, Resend und GitHub erstellen wir für Sie und geben Ihnen die Zugangsdaten, damit Sie alles im Blick haben."
+      answer: "Ja – Sie brauchen Accounts bei IONOS, Github, Vercel, Supabase und Resend. Sie erstellen die Accounts selbst, um die volle Kontrolle zu haben. Wir unterstützen Sie natürlich bei der Einrichtung und allen Fragen."
     }
   ] as FAQItem[]
 };
