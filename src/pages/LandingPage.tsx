@@ -665,6 +665,19 @@ const LandingPage: React.FC = () => {
                   <li><a href="#process" className="hover:text-white transition-colors">Ablauf</a></li>
                   <li><a href="#contact" className="hover:text-white transition-colors">Kontakt</a></li>
                </ul>
+               <div className="mt-6 flex justify-center md:justify-start">
+                 <a
+                   href="https://www.instagram.com/meinauftrittonline/"
+                   target="_blank"
+                   rel="noreferrer"
+                   aria-label="Instagram"
+                   className="inline-flex items-center justify-center text-slate-300 hover:text-white transition-colors"
+                 >
+                   <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                     <path d="M12 7.2a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6Zm0 7.9a3.1 3.1 0 1 1 0-6.2 3.1 3.1 0 0 1 0 6.2Zm6.1-8.1a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Zm3.2 1.1c-.1-1.2-.4-2.3-1.3-3.2-.9-.9-2-1.2-3.2-1.3-1.3-.1-5.3-.1-6.6 0-1.2.1-2.3.4-3.2 1.3-.9.9-1.2 2-1.3 3.2-.1 1.3-.1 5.3 0 6.6.1 1.2.4 2.3 1.3 3.2.9.9 2 1.2 3.2 1.3 1.3.1 5.3.1 6.6 0 1.2-.1 2.3-.4 3.2-1.3.9-.9 1.2-2 1.3-3.2.1-1.3.1-5.3 0-6.6Zm-1.9 8c-.3.7-.9 1.3-1.6 1.6-1.1.4-3.6.3-4.8.3s-3.7.1-4.8-.3c-.7-.3-1.3-.9-1.6-1.6-.4-1.1-.3-3.6-.3-4.8s-.1-3.7.3-4.8c.3-.7.9-1.3 1.6-1.6 1.1-.4 3.6-.3 4.8-.3s3.7-.1 4.8.3c.7.3 1.3.9 1.6 1.6.4 1.1.3 3.6.3 4.8s.1 3.7-.3 4.8Z" />
+                   </svg>
+                 </a>
+               </div>
             </div>
          </div>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-slate-800 text-sm text-center">
