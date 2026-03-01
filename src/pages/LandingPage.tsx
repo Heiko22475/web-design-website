@@ -54,10 +54,9 @@ const LandingPage: React.FC = () => {
 
     const win = window as any;
     win.dataLayer = win.dataLayer || [];
-    function gtag(...args: unknown[]) { win.dataLayer.push(args); }
-    win.gtag = gtag;
-    gtag('js', new Date());
-    gtag('config', GA_MEASUREMENT_ID);
+    win.gtag = function() { win.dataLayer.push(arguments); };
+    win.gtag('js', new Date());
+    win.gtag('config', GA_MEASUREMENT_ID);
     console.log('[GA] Config sent for', GA_MEASUREMENT_ID);
   };
 
