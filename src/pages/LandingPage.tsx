@@ -39,13 +39,17 @@ const LandingPage: React.FC = () => {
 
   const loadGtag = () => {
     if (document.getElementById('ga-gtag')) {
+      console.log('[GA] Script already loaded');
       return;
     }
 
+    console.log('[GA] Loading gtag script...');
     const script = document.createElement('script');
     script.id = 'ga-gtag';
     script.async = true;
     script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    script.onload = () => console.log('[GA] gtag.js loaded successfully');
+    script.onerror = () => console.error('[GA] FAILED to load gtag.js – blocked by adblocker?');
     document.head.appendChild(script);
 
     const win = window as any;
@@ -54,6 +58,7 @@ const LandingPage: React.FC = () => {
     win.gtag = gtag;
     gtag('js', new Date());
     gtag('config', GA_MEASUREMENT_ID);
+    console.log('[GA] Config sent for', GA_MEASUREMENT_ID);
   };
 
   useEffect(() => {
