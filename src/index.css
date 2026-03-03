@@ -4,6 +4,8 @@
 @media (prefers-color-scheme: dark) {
   html, body, * {
     color-scheme: dark !important;
+    forced-color-adjust: none !important;
+    -webkit-text-fill-color: inherit !important;
   }
 }
 
