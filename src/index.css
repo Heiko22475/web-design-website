@@ -1,6 +1,12 @@
 @import "tailwindcss";
 @custom-variant dark (&.dark);
 
+@media (prefers-color-scheme: dark) {
+  html, body, * {
+    color-scheme: dark !important;
+  }
+}
+
 html {
   color-scheme: dark;
   scroll-behavior: smooth;
