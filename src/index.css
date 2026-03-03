@@ -1,6 +1,8 @@
 @import "tailwindcss";
+@custom-variant dark (&.dark);
 
 html {
+  color-scheme: dark;
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
   overflow-y: scroll;
