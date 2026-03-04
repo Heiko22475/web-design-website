@@ -197,16 +197,12 @@ export const landingContent = {
       answer: "Absolut. Ihre Website sieht auf Smartphones, Tablets und Desktop-Computern gleichermaßen gut aus und ist perfekt bedienbar."
     },
     {
-      question: "Bieten Sie auch Domains an?",
-      answer: "Wir unterstützen Sie bei allen Fragen rund um das Thema Domains und erklären die nötigen Schritte verständlich. Die Domain wird von Ihnen selbst gekauft, damit sie jederzeit in Ihrem Besitz bleibt."
-    },
-    {
-      question: "Welche Plattformen benutzen Sie?",
-      answer: "Für das Hosting nutzen wir Vercel. Für den Versand von Kontaktanfragen per E-Mail verwenden wir Resend."
+      question: "Muss ich etwas extra kaufen oder monatlich bezahlen?",
+      answer: "Ja – Sie benötigen eine eigene Domain, die in den meisten Fällen unter 1€ kostet. Außerdem brauchen Sie bei Webflow den CMS Plan für 23€ im Monat, der das Hosting und das Content Management System beinhaltet."
     },
     {
       question: "Muss ich dafür etwas einrichten oder Accounts erstellen?",
-      answer: "Ja – Sie brauchen Accounts bei IONOS, Github, Vercel, Supabase und Resend. Sie erstellen die Accounts selbst, um die volle Kontrolle zu haben. Wir unterstützen Sie natürlich bei der Einrichtung und allen Fragen."
+      answer: "Ja – Sie brauchen einen kostenlosen Account bei IONOS und bei Webflow. Sie erstellen die Accounts selbst, um die volle Kontrolle zu haben. Wir unterstützen Sie natürlich bei der Einrichtung und allen Fragen."
     }
   ] as FAQItem[]
 };

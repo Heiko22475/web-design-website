@@ -846,12 +846,15 @@ const LandingPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-lg mb-2">6. Datenbank/Backend (Supabase)</h3>
+                    <h3 className="font-bold text-lg mb-2">6. Website-Erstellung für Kunden (Webflow)</h3>
                     <p className="text-sm">
-                      Auf dieser Website verwenden wir Supabase nicht. Supabase kann jedoch bei Kundenprojekten eingesetzt werden, um Daten der jeweiligen Kunden-Website zu speichern (z.B. Kontaktanfragen, Inhalte, Nutzer- oder Projektinformationen).
+                      Für die Erstellung von Kundenprojekten nutzen wir die Plattform Webflow. Webflow übernimmt dabei das Hosting sowie das Content Management System (CMS) der jeweiligen Kunden-Website. Im Rahmen des Betriebs der Kunden-Website können personenbezogene Daten (z.B. IP-Adressen, Kontaktanfragen, Nutzerinhalte) durch Webflow verarbeitet werden.
                     </p>
                     <p className="text-sm mt-2">
-                      Wenn Supabase in einem Kundenprojekt eingesetzt wird, gelten die dortige Datenschutzerklaerung, Rechtsgrundlage und Speicherdauer des jeweiligen Website-Betreibers.
+                      Anbieter: Webflow, Inc., 398 11th Street, San Francisco, CA 94103, USA. Es kann dabei zu einer Verarbeitung in Ländern außerhalb der EU/des EWR kommen. In diesem Fall erfolgt die Übermittlung auf Grundlage geeigneter Garantien (z.B. Standardvertragsklauseln). Weitere Informationen finden Sie in der Datenschutzerklärung von Webflow.
+                    </p>
+                    <p className="text-sm mt-2">
+                      Hinweis: Die vorliegende Website (meinauftrittonline.de) wird über Vercel gehostet und nutzt kein Webflow.
                     </p>
                   </div>
 
