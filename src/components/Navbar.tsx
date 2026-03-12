@@ -7,7 +7,7 @@ const navLinks = [
   { name: 'Beispiele', href: '#projects' },
   { name: 'Preise', href: '#packages' },
   { name: 'Ablauf', href: '#process' },
-  { name: 'Kontakt', href: '#contact' },
+  { name: 'Produkte', href: '#products' },
 ];
 
 const Navbar: React.FC = () => {

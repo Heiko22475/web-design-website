@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import LandingPage from './pages/LandingPage';
 import ProcessStepPage from './pages/ProcessStepPage';
+import ProductsPage from './pages/ProductsPage';
 
 const ScrollToHash: React.FC = () => {
   const { hash, pathname } = useLocation();
@@ -40,6 +41,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/projektablauf/:stepSlug" element={<ProcessStepPage />} />
+        <Route path="/produkte" element={<ProductsPage />} />
       </Routes>
     </BrowserRouter>
   );
