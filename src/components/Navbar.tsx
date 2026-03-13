@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const navLinks = [
   { name: 'Start', href: '#hero' },
@@ -12,18 +13,40 @@ const navLinks = [
 
 const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === '/';
 
   const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
   const closeMenu = () => setIsMobileMenuOpen(false);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
+    closeMenu();
+    if (isHome) return; // let default anchor scroll work
+    e.preventDefault();
+    navigate('/' + hash);
+  };
+
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    closeMenu();
+    e.preventDefault();
+    if (isHome) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      window.location.href = '/';
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/90 backdrop-blur-sm border-b border-slate-800 shadow-lg shadow-black/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0 flex items-center space-x-4">
-            <img src="/MeinAuftrittOnline.png" alt="Logo" className="w-20 h-20 object-contain rounded" />
-            <a href="#hero" onClick={closeMenu} className="font-bold text-xl text-slate-100 tracking-tight">
-              Mein Auftritt <span className="text-sky-400">Online</span>
+            <a href="/" onClick={handleLogoClick} className="flex items-center space-x-4">
+              <img src="/MeinAuftrittOnline.png" alt="Logo" className="w-20 h-20 object-contain rounded" />
+              <span className="font-bold text-xl text-slate-100 tracking-tight">
+                Mein Auftritt <span className="text-sky-400">Online</span>
+              </span>
             </a>
           </div>
 
@@ -33,6 +56,7 @@ const Navbar: React.FC = () => {
               <a
                 key={link.name}
                 href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className="text-slate-300 hover:text-sky-400 font-medium transition-colors transition-transform duration-200 hover:scale-105 text-sm uppercase tracking-wide"
               >
                 {link.name}
@@ -40,6 +64,7 @@ const Navbar: React.FC = () => {
             ))}
             <a
               href="#contact"
+              onClick={(e) => handleNavClick(e, '#contact')}
               className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full font-medium transition-colors transition-transform duration-200 hover:scale-105 shadow-sm hover:shadow-md text-sm glow-button"
             >
               Anfragen
@@ -79,7 +104,7 @@ const Navbar: React.FC = () => {
               <a
                 key={link.name}
                 href={link.href}
-                onClick={closeMenu}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className="block px-3 py-4 rounded-md text-base font-medium text-slate-200 hover:text-sky-400 hover:bg-slate-900/60 text-center border-b border-slate-900 last:border-0"
               >
                 {link.name}
