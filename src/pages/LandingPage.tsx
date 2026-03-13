@@ -518,19 +518,6 @@ const LandingPage: React.FC = () => {
           </div>
         </Section>
 
-        {/* FAQ SECTION */}
-        <Section id="faq" bg="gray">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-extrabold text-slate-100 sm:text-4xl wipe-text">
-              Häufige Fragen
-            </h2>
-            <p className="mt-4 max-w-2xl text-base sm:text-xl text-slate-300 mx-auto">
-              Alles was Sie wissen müssen, bevor wir starten.
-            </p>
-          </div>
-          <Accordion items={faq} />
-        </Section>
-
         {/* PRODUCTS SECTION */}
         <Section id="products" bg="white">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center stagger-reveal">
@@ -573,6 +560,19 @@ const LandingPage: React.FC = () => {
               </div>
             </div>
           </div>
+        </Section>
+
+        {/* FAQ SECTION */}
+        <Section id="faq" bg="gray">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-extrabold text-slate-100 sm:text-4xl wipe-text">
+              Häufige Fragen
+            </h2>
+            <p className="mt-4 max-w-2xl text-base sm:text-xl text-slate-300 mx-auto">
+              Alles was Sie wissen müssen, bevor wir starten.
+            </p>
+          </div>
+          <Accordion items={faq} />
         </Section>
 
         {/* CONTACT SECTION */}
@@ -879,9 +879,22 @@ const LandingPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-lg mb-2">5. E-Mail Versanddienst (Resend)</h3>
+                    <h3 className="font-bold text-lg mb-2">5. Kostenlose Guides (Guide-Anforderung)</h3>
                     <p className="text-sm">
-                      Für den Versand von Kontaktanfragen per E-Mail nutzen wir den Versanddienst Resend. Dabei werden die von Ihnen im Formular angegebenen Inhalte (z.B. Name, E-Mail-Adresse, Paket, Nachricht) an Resend übermittelt, um die E-Mail technisch zustellen zu können.
+                      Wenn Sie über unser Formular einen kostenlosen Guide anfordern, erheben wir Ihren Namen und Ihre E-Mail-Adresse. Diese Daten verwenden wir ausschließlich, um Ihnen den Guide per E-Mail zuzusenden und Sie über den erfolgreichen Versand zu informieren.
+                    </p>
+                    <p className="text-sm mt-2">
+                      Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Mit dem Absenden des Formulars willigen Sie in die Verarbeitung Ihrer Daten zu diesem Zweck ein. Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, z.B. per E-Mail an {legalInfo.email}.
+                    </p>
+                    <p className="text-sm mt-2">
+                      Der Versand erfolgt über den Dienst Resend (siehe Abschnitt 6). Ihre Daten werden nicht für Werbezwecke oder Newsletter verwendet und nach Zustellung des Guides spätestens nach 6 Monaten gelöscht, sofern keine anderweitige Rechtsgrundlage besteht.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="font-bold text-lg mb-2">6. E-Mail Versanddienst (Resend)</h3>
+                    <p className="text-sm">
+                      Für den Versand von Kontaktanfragen und Guide-Anforderungen per E-Mail nutzen wir den Versanddienst Resend. Dabei werden die von Ihnen im jeweiligen Formular angegebenen Inhalte (z.B. Name, E-Mail-Adresse) an Resend übermittelt, um die E-Mail technisch zustellen zu können.
                     </p>
                     <p className="text-sm mt-2">
                       Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen) bzw. Art. 6 Abs. 1 lit. f DSGVO (effiziente Bearbeitung von Anfragen).
@@ -890,7 +903,7 @@ const LandingPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-lg mb-2">6. Website-Erstellung für Kunden (Webflow)</h3>
+                    <h3 className="font-bold text-lg mb-2">7. Website-Erstellung für Kunden (Webflow)</h3>
                     <p className="text-sm">
                       Für die Erstellung von Kundenprojekten nutzen wir die Plattform Webflow. Webflow übernimmt dabei das Hosting sowie das Content Management System (CMS) der jeweiligen Kunden-Website. Im Rahmen des Betriebs der Kunden-Website können personenbezogene Daten (z.B. IP-Adressen, Kontaktanfragen, Nutzerinhalte) durch Webflow verarbeitet werden.
                     </p>
@@ -903,7 +916,7 @@ const LandingPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-lg mb-2">7. Google Analytics</h3>
+                    <h3 className="font-bold text-lg mb-2">8. Google Analytics</h3>
                     <p className="text-sm">
                       Wir nutzen Google Analytics, um die Nutzung unserer Website auszuwerten und Inhalte zu verbessern.
                       Die Verarbeitung erfolgt nur nach Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO i.V.m. § 25 Abs. 1 TDDDG).
@@ -913,14 +926,14 @@ const LandingPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-lg mb-2">8. Cookies</h3>
+                    <h3 className="font-bold text-lg mb-2">9. Cookies</h3>
                     <p className="text-sm">
                       Wir setzen technisch notwendige Cookies ein. Analyse-Cookies werden nur nach Ihrer Einwilligung gesetzt.
                     </p>
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-lg mb-2">9. Ihre Rechte</h3>
+                    <h3 className="font-bold text-lg mb-2">10. Ihre Rechte</h3>
                     <p className="text-sm">
                       Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie Widerspruch gegen die Verarbeitung Ihrer personenbezogenen Daten.
                       Zudem haben Sie das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.
@@ -928,7 +941,7 @@ const LandingPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-lg mb-2">10. Stand</h3>
+                    <h3 className="font-bold text-lg mb-2">11. Stand</h3>
                     <p className="text-sm">{legalInfo.lastUpdated}</p>
                   </div>
                 </div>
