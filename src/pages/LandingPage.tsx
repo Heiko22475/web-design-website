@@ -348,6 +348,14 @@ const LandingPage: React.FC = () => {
               </div>
             </div>
           </div>
+          <div className="mt-10 text-center">
+            <a
+              href="/ueber-uns"
+              className="inline-flex items-center justify-center px-7 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors transition-transform hover:scale-[1.06] shadow-md hover:shadow-lg glow-button"
+            >
+              Mehr über uns erfahren
+            </a>
+          </div>
         </Section>
 
         {/* SERVICES SECTION */}

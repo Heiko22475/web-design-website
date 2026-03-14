@@ -6,6 +6,7 @@ import ProductsPage from './pages/ProductsPage';
 import ContactPage from './pages/ContactPage';
 import ServicePage from './pages/ServicePage';
 import QuestionPage from './pages/QuestionPage';
+import AboutPage from './pages/AboutPage';
 
 const ScrollToHash: React.FC = () => {
   const { hash, pathname } = useLocation();
@@ -48,6 +49,7 @@ function App() {
         <Route path="/kontakt" element={<ContactPage />} />
         <Route path="/leistungen/:serviceSlug" element={<ServicePage />} />
         <Route path="/frage-stellen" element={<QuestionPage />} />
+        <Route path="/ueber-uns" element={<AboutPage />} />
       </Routes>
     </BrowserRouter>
   );
