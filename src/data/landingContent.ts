@@ -44,6 +44,18 @@ export interface FAQItem {
   answer: string;
 }
 
+export interface ServiceDetailSection {
+  title: string;
+  body: string;
+}
+
+export interface ServiceDetail {
+  slug: string;
+  title: string;
+  subtitle: string;
+  sections: ServiceDetailSection[];
+}
+
 export const landingContent = {
   services: [
     {
@@ -204,5 +216,100 @@ export const landingContent = {
       question: "Muss ich dafür etwas einrichten oder Accounts erstellen?",
       answer: "Ja – Sie brauchen einen kostenlosen Account bei IONOS und bei Webflow. Sie erstellen die Accounts selbst, um die volle Kontrolle zu haben. Wir unterstützen Sie natürlich bei der Einrichtung und allen Fragen."
     }
-  ] as FAQItem[]
+  ] as FAQItem[],
+  serviceDetails: [
+    {
+      slug: "one-pager",
+      title: "One-Pager – Ihre kompakte Landing Page",
+      subtitle: "Alles Wichtige auf einer Seite – optimiert für Conversions und maximale Wirkung.",
+      sections: [
+        {
+          title: "Was ist ein One-Pager?",
+          body: "Ein One-Pager ist eine moderne, einseitige Website, die alle relevanten Informationen kompakt und übersichtlich präsentiert. Ideal als Landing Page für Kampagnen, als digitale Visitenkarte oder für den schnellen Start Ihrer Online-Präsenz. Durch den klaren Aufbau führen Sie Besucher gezielt zur gewünschten Aktion – ob Kontaktanfrage, Terminbuchung oder Kaufentscheidung."
+        },
+        {
+          title: "Für wen eignet sich ein One-Pager?",
+          body: "Perfekt für Einzelunternehmer, Freelancer, Startups und kleine Unternehmen, die schnell und professionell online sichtbar sein wollen. Auch als ergänzende Landing Page für gezielte Werbekampagnen bei Google Ads oder Social Media Marketing ist ein One-Pager die ideale Wahl."
+        },
+        {
+          title: "Responsive Webdesign & mobile Optimierung",
+          body: "Ihr One-Pager wird vollständig responsiv entwickelt – das bedeutet, er sieht auf Smartphones, Tablets und Desktop-PCs gleichermaßen professionell aus. Mobile Optimierung ist heute nicht nur ein SEO-Rankingfaktor, sondern entscheidend für die Nutzererfahrung Ihrer Besucher."
+        },
+        {
+          title: "Schnelle Ladezeiten & Performance",
+          body: "Wir setzen auf modernste Webtechnologien, um blitzschnelle Ladezeiten zu garantieren. Eine performante Website verbessert Ihr Google-Ranking, reduziert die Absprungrate und sorgt dafür, dass potenzielle Kunden nicht abspringen, bevor sie Ihr Angebot sehen."
+        },
+        {
+          title: "Suchmaschinenoptimierung (SEO) inklusive",
+          body: "Jeder One-Pager wird mit grundlegender Suchmaschinenoptimierung ausgeliefert: saubere Seitenstruktur, optimierte Meta-Tags, schnelle Ladezeiten und eine technisch einwandfreie Basis für bessere Sichtbarkeit bei Google."
+        },
+        {
+          title: "Kontaktformular & Datenschutz",
+          body: "Ein integriertes Kontaktformular macht es Ihren Besuchern leicht, direkt mit Ihnen in Verbindung zu treten. Selbstverständlich DSGVO-konform mit Impressum und Datenschutzerklärung – damit Sie rechtlich auf der sicheren Seite sind."
+        }
+      ]
+    },
+    {
+      slug: "business-website",
+      title: "Business Website – Ihr professioneller Online-Auftritt",
+      subtitle: "Mehrseitig, individuell und auf Wachstum ausgelegt – die perfekte Unternehmenswebsite.",
+      sections: [
+        {
+          title: "Was bietet eine Business Website?",
+          body: "Eine Business Website ist Ihr umfassender digitaler Auftritt im Internet. Mehrere Seiten bieten Platz für detaillierte Informationen zu Ihren Leistungen, Ihrem Team, Referenzen und Ihrem Unternehmen. Mit individuellem Webdesign und durchdachter Struktur schaffen Sie Vertrauen und überzeugen potenzielle Kunden."
+        },
+        {
+          title: "Individuelles Design & Branding",
+          body: "Wir entwickeln ein maßgeschneidertes Webdesign, das Ihre Marke perfekt widerspiegelt. Farben, Typografie, Layout und Bildsprache werden exakt auf Ihr Corporate Design abgestimmt – für einen einheitlichen und professionellen Markenauftritt, der sich von der Konkurrenz abhebt."
+        },
+        {
+          title: "Content Management System (CMS)",
+          body: "Mit einem leistungsfähigen CMS können Sie Texte, Bilder und Inhalte Ihrer Website jederzeit selbst aktualisieren – ganz ohne Programmierkenntnisse. So bleiben Sie flexibel und können Ihre Website kontinuierlich an neue Anforderungen anpassen."
+        },
+        {
+          title: "SEO & lokale Sichtbarkeit",
+          body: "Ihre Business Website wird mit erweiterter Suchmaschinenoptimierung ausgestattet: optimierte Seitenstruktur, relevante Keywords, Meta-Beschreibungen und technisches SEO. Ideal für lokale Unternehmen, die bei Google Maps und in der lokalen Suche gefunden werden wollen."
+        },
+        {
+          title: "Google Maps & Social Media Integration",
+          body: "Lassen Sie Kunden Ihren Standort direkt auf der Website finden – mit eingebetteter Google Maps Karte. Dazu verknüpfen wir Ihre Social Media Kanäle für maximale Reichweite und eine nahtlose Online-Präsenz auf allen Plattformen."
+        },
+        {
+          title: "DSGVO-konform & Cookie Consent",
+          body: "Ihre Website erfüllt alle Anforderungen der DSGVO: rechtskonformes Impressum, Datenschutzerklärung und ein Cookie Consent Banner, das Ihren Besuchern die Wahl lässt. So sind Sie rechtlich abgesichert und schaffen Vertrauen bei Ihren Kunden."
+        }
+      ]
+    },
+    {
+      slug: "premium-paket",
+      title: "Premium Paket – Die Rundum-sorglos-Lösung",
+      subtitle: "Maximaler Umfang, individuelle Funktionen und höchste Qualität für Ihren Webauftritt.",
+      sections: [
+        {
+          title: "Was macht das Premium Paket besonders?",
+          body: "Das Premium Paket ist unsere umfassendste Lösung für Unternehmen, die keine Kompromisse eingehen wollen. Sie erhalten ein individuell angepasstes Webprojekt mit erweiterten Funktionen, maximaler Suchmaschinenoptimierung und einem professionellen Design, das Ihre Marke auf das nächste Level bringt."
+        },
+        {
+          title: "Individuell angepasstes Webprojekt",
+          body: "Jedes Premium-Projekt wird von Grund auf nach Ihren Anforderungen konzipiert und entwickelt. Ob spezielle Funktionen, komplexe Seitenstrukturen oder besondere Integrationen – wir setzen Ihre Vision technisch sauber und kreativ um. Ideal für mittelständische Unternehmen, Agenturen und anspruchsvolle Projekte."
+        },
+        {
+          title: "Maximale Suchmaschinenoptimierung",
+          body: "Im Premium Paket gehen wir bei der SEO-Optimierung in die Tiefe: umfassende Keyword-Recherche, optimierte Seitenstruktur, interne Verlinkung, Schema-Markup und technisches SEO auf höchstem Niveau. So erzielen Sie nachhaltig bessere Rankings bei Google und steigern Ihre organische Reichweite."
+        },
+        {
+          title: "Umfassendes Content Management",
+          body: "Mit dem erweiterten CMS haben Sie volle Kontrolle über alle Inhalte Ihrer Website. Verwalten Sie Blog-Beiträge, Landingpages, Teammitglieder, Referenzen und mehr – intuitiv und ohne technische Vorkenntnisse. Perfekt für Unternehmen, die regelmäßig neue Inhalte veröffentlichen."
+        },
+        {
+          title: "Erweiterte Funktionen & Integrationen",
+          body: "Von Terminbuchungssystemen über Newsletter-Anbindung bis hin zu individuellen Formularen und Automatisierungen – das Premium Paket bietet Ihnen alle Funktionen, die ein moderner Internetauftritt braucht. Wir integrieren genau die Tools, die Ihr Business voranbringen."
+        },
+        {
+          title: "Performance, Sicherheit & Support",
+          body: "Höchste Performance durch optimierte Ladezeiten, professionelles Hosting und regelmäßige Qualitätschecks. Dazu erhalten Sie eine ausführliche Übergabe und Dokumentation, damit Sie Ihre Website sicher und eigenständig betreiben können."
+        }
+      ]
+    }
+  ] as ServiceDetail[]
 };

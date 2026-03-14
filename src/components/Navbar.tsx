@@ -63,8 +63,8 @@ const Navbar: React.FC = () => {
               </a>
             ))}
             <a
-              href="#contact"
-              onClick={(e) => handleNavClick(e, '#contact')}
+              href="/kontakt"
+              onClick={(e) => { closeMenu(); e.preventDefault(); navigate('/kontakt'); }}
               className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full font-medium transition-colors transition-transform duration-200 hover:scale-105 shadow-sm hover:shadow-md text-sm glow-button"
             >
               Anfragen

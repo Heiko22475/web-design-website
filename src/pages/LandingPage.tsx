@@ -256,7 +256,7 @@ const LandingPage: React.FC = () => {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                     <a
-                      href="#contact"
+                      href="/kontakt"
                       className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10 shadow-lg hover:shadow-xl transition-all transition-transform hover:scale-[1.05] will-change-transform glow-button glow-button-always glow-button-strong"
                     >
                       Projekt anfragen
@@ -360,14 +360,24 @@ const LandingPage: React.FC = () => {
               Maßgeschneiderte Lösungen für Ihren digitalen Erfolg.
             </p>
           </div>
-<div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto stagger-reveal"> {services.map((service) => ( <a key={service.id} href="#packages" className="bg-slate-900/60 rounded-xl shadow-sm hover:shadow-md transition-shadow transition-transform duration-300 hover:scale-[1.05] will-change-transform p-4 sm:p-6 border border-slate-800 glow-card focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950" > <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4 text-blue-300 glow-icon">
+<div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto stagger-reveal"> {services.map((service) => {
+              const slugMap: Record<string, string> = { lp: 'one-pager', biz: 'business-website', maintenance: 'premium-paket' };
+              return ( <a key={service.id} href={`/leistungen/${slugMap[service.id]}`} className="bg-slate-900/60 rounded-xl shadow-sm hover:shadow-md transition-shadow transition-transform duration-300 hover:scale-[1.05] will-change-transform p-4 sm:p-6 border border-slate-800 glow-card focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950" > <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4 text-blue-300 glow-icon">
                    {/* Simple Icon Placeholder */}
                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                 </div>
                 <h3 className="text-lg font-medium text-slate-100 mb-2">{service.title}</h3>
                 <p className="text-slate-300 text-base">{service.description}</p>
+                <span className="mt-4 inline-flex items-center text-sm font-semibold text-sky-400 hover:text-sky-300 transition-colors">
+                  Mehr erfahren
+                  <svg className="ml-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14" />
+                    <path d="M13 5l7 7-7 7" />
+                  </svg>
+                </span>
               </a>
-            ))}
+            );
+            })}
           </div>
         </Section>
 
@@ -456,7 +466,7 @@ const LandingPage: React.FC = () => {
                 </div>
                 <div className="p-6 sm:p-8 bg-slate-900/80 border-t border-slate-800">
                   <a
-                    href="#contact"
+                    href="/kontakt"
                     className={`w-full block text-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium transition-colors glow-button ${pkg.id === 'starter' ? 'glow-button-gray' : pkg.id === 'premium' ? 'glow-button-gold' : ''} ${pkg.id === 'premium' ? 'bg-amber-300 text-amber-950 hover:bg-amber-200' : pkg.isPopular ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-slate-700 text-white hover:bg-slate-600'}`}
                   >
                     Jetzt anfragen
@@ -573,6 +583,14 @@ const LandingPage: React.FC = () => {
             </p>
           </div>
           <Accordion items={faq} />
+          <div className="mt-10 text-center">
+            <a
+              href="/frage-stellen"
+              className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all transition-transform hover:scale-[1.05] will-change-transform glow-button"
+            >
+              Eine Frage stellen
+            </a>
+          </div>
         </Section>
 
         {/* CONTACT SECTION */}
@@ -711,7 +729,7 @@ const LandingPage: React.FC = () => {
                   <li><a href="#projects" className="hover:text-white transition-colors">Beispiele</a></li>
                   <li><a href="#packages" className="hover:text-white transition-colors">Preise</a></li>
                   <li><a href="#process" className="hover:text-white transition-colors">Ablauf</a></li>
-                  <li><a href="#contact" className="hover:text-white transition-colors">Kontakt</a></li>
+                  <li><a href="/kontakt" className="hover:text-white transition-colors">Kontakt</a></li>
                </ul>
                <div className="mt-6 flex justify-center md:justify-start">
                  <a
